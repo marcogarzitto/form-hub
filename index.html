@@ -36,10 +36,10 @@
 
     .page-logo {
       display: block;
-      width: clamp(56px, 10svh, 80px);
-      height: clamp(56px, 10svh, 80px);
+      width: auto;
+      max-width: 100%;
+      height: auto;
       margin: 0 auto clamp(10px, 2svh, 20px);
-      object-fit: contain;
     }
 
     h1 {
@@ -53,7 +53,7 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: clamp(12px, 2.5svh, 20px);
+      gap: clamp(24px, 4svh, 32px);
     }
 
     a.btn {
@@ -63,8 +63,8 @@
       align-items: center;
       justify-content: center;
       min-width: 0;
-      min-height: clamp(132px, 24svh, 200px);
-      padding: clamp(12px, 2.5svh, 28px) 24px;
+      min-height: clamp(116px, 20svh, 144px);
+      padding: clamp(8px, 1.5svh, 16px) 24px;
       border: 1px solid #ffffff30;
       border-radius: 22px;
       background: linear-gradient(135deg, #6a63d7, #514bb5);
@@ -125,7 +125,7 @@
       }
 
       .grid {
-        gap: 12px;
+        gap: 18px;
       }
 
       a.btn {
@@ -136,6 +136,36 @@
       .btn__arrow {
         right: 12px;
         bottom: 12px;
+      }
+    }
+
+    /* Leave room for the full-size logo in a short tablet viewport. */
+    @media (max-height: 540px) {
+      body {
+        padding-block: 8px;
+      }
+
+      header,
+      .page-logo {
+        margin-bottom: 8px;
+      }
+
+      h1,
+      .btn__label {
+        line-height: 1.2;
+      }
+
+      .grid {
+        row-gap: 18px;
+      }
+
+      a.btn {
+        min-height: 0;
+        padding-block: 5px;
+      }
+
+      .btn__arrow {
+        bottom: 8px;
       }
     }
 
@@ -150,7 +180,7 @@
 <body>
   <main>
     <header>
-      <img class="page-logo" src="assets/centro.jpg" alt="" width="80" height="80">
+      <img class="page-logo" src="assets/loghino.jpeg" alt="" width="210" height="208">
       <h1>Selezionare i questionari</h1>
     </header>
     <nav class="grid" aria-label="Questionari disponibili">
